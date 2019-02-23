@@ -197,3 +197,23 @@ def print_cheapest_shipping_method(weight):
   
 print_cheapest_shipping_method(4.8)
 print_cheapest_shipping_method(41.5)
+
+..............................................................................
+GRADEBOOK
+
+subjects = ['physics', 'calculus', 'poetry', 'history']
+grades = [98, 97, 85, 88]
+
+subjects.append('computer science')
+grades.append(100)
+
+gradebook = zip(subjects, grades)
+
+subjects.append('visual arts')
+grades.append(93)
+
+last_semester_gradebook = [('physics', 90), ('calculus', 94), ('poetry', 95), ('history', 89), ('computer science', 100), ('visual arts', 96)]
+
+full_gradebook = zip(last_semester_gradebook, gradebook)
+
+print(list(full_gradebook))
