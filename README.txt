@@ -217,3 +217,71 @@ last_semester_gradebook = [('physics', 90), ('calculus', 94), ('poetry', 95), ('
 full_gradebook = zip(last_semester_gradebook, gradebook)
 
 print(list(full_gradebook))
+
+..............................................................................
+Lens Slice
+# Len's Slice pizza joint
+toppings = ['pepperoni', 'pineapple', 'cheese', 'sausage', 'olives', 'anchovies', 'mushrooms']
+prices = [2, 6, 1, 3, 2, 7, 2]
+# Length of toppings
+num_pizzas = len(toppings)
+print("We sell %.0f different kinds of pizza!"
+     %(num_pizzas)
+     )
+pizzas = list(zip(prices, toppings))
+
+#Sorting and Slicing pizzas
+pizzas.sort()
+
+print(pizzas)
+
+cheapest_pizza = pizzas[0]
+priciest_pizza = pizzas[-1]
+three_cheapest = pizzas[:3]
+..............................................................................
+SUMMING A LIST
+
+def listsum(numList):
+   if len(numList) == 1:
+        return numList[0]
+   else:
+        return numList[0] + listsum(numList[1:])
+
+print(listsum([1,3,5,7,9]))
+
+..............................................................................
+Python Loops
+Carly's Clippers
+
+hairstyles = ["bouffant", "pixie", "dreadlocks", "crew", "bowl", "bob", "mohawk", "flattop"]
+
+prices = [30, 25, 40, 20, 20, 35, 50, 35]
+
+last_week = [2, 3, 5, 8, 4, 4, 6, 2]
+
+
+total_prices = 0
+
+for i in prices:
+  total_prices += i
+print(total_prices)
+average_price = total_prices/len(prices)
+print(" The average haircut prices is " + str(average_price))
+
+new_prices = [ i - 5 for i in prices]
+print(new_prices)
+
+total_revenue = 0
+for i in range(len(hairstyles)):
+  total_revenue = prices[i] * last_week[i]
+print("Total revenue: " + str(total_revenue))
+
+average_daily_revenue = total_revenue/7
+print(average_daily_revenue)
+
+cuts_under_30 = []
+
+for i in new_prices:
+  if i < 30:
+    cuts_under_30.append(i)
+    print(cuts_under_30)
