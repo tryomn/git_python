@@ -104,7 +104,7 @@ FROM status_aggregate
 GROUP BY 1;
 
 ....................................................................................................
-CHURN RATE FOR CODEFLIX:
+CHURN RATE FOR CODEFLIX: PROJECT
 
 
 WITH months AS (
@@ -133,13 +133,13 @@ status AS (
   SELECT id, first_day as month,
   
   CASE
-  WHEN (subscription_start < first_day) 
+  WHEN (subscription_start < first_day) AND (subscription_end > first_day OR subscription_end IS NULL)
     AND (segment = 87) THEN 1
   ELSE 0
   END AS is_active_87,
   
   CASE
-  WHEN (subscription_start < first_day) 
+  WHEN (subscription_start < first_day) AND (subscription_end > first_day OR subscription_end IS NULL)
     AND (segment = 30) THEN 1
   ELSE 0
   END AS is_active_30,
